@@ -10,7 +10,7 @@ from threading import Thread
 load_dotenv()
 
 TOKEN = os.getenv("DISCORD_TOKEN")
-GUILD_ID = int(os.getenv("GUILD_ID"))
+GUILD_ID = 1386716916768444456
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 intents = discord.Intents.default()
