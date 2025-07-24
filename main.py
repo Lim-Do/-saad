@@ -26,7 +26,6 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 async def on_ready():
     print(f"✅ 봇 로그인: {bot.user} (ID: {bot.user.id})")
 
-    # 상태 메시지 설정
     await bot.change_presence(
         activity=discord.Game(name="제 1경비단 훈련 개최")
     )
@@ -88,6 +87,7 @@ def run():
 
 def keep_alive():
     t = Thread(target=run)
+    t.daemon = True  # 데몬 쓰레드로 설정 (메인 종료시 같이 종료)
     t.start()
 
 keep_alive()
